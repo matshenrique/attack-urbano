@@ -1,0 +1,679 @@
+@import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* Reset e estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #e4e4e4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Cabeçalho */
+header {
+    background: linear-gradient(90deg,rgb(40, 0, 56) 0%, rgb(99, 2, 148) 50%, rgb(40, 0, 56) 100%);
+    color: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo i {
+    font-size: 28px;
+    color: #ffffff;
+    margin-right: 10px;
+}
+
+.logo h1 {
+    font-size: 28px;
+    font-weight: 300;
+    font-family: "Sedgwick Ave", cursive;
+}
+
+.logo span {
+    font-weight: 600;
+    color: #81f58b;
+    font-family: "Sedgwick Ave", cursive;
+}
+
+/* Navegação */
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a i {
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    color: #eff314;
+}
+
+nav ul li a.ativo {
+    color: #eff314;
+    border-bottom: 2px solid #eff314;
+    padding-bottom: 5px;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+}
+
+.icons a {
+    color: white;
+    margin-left: 20px;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.icons a:hover {
+    color: #e7fc74;
+}
+
+/* Banner principal */
+.banner {
+   background: url(img/banner_graffit.jpg);
+   background-color: rgba(0, 0, 0, 0.274); /* Fundo preto com 50% de opacidade */
+   background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-bottom: 50px;
+}
+
+.banner-content {
+    max-width: 800px;
+    padding: 20px;
+}
+
+.banner h2 {
+    font-family: "Sedgwick Ave", cursive;
+    font-weight: bolder;
+    font-size: 84px;
+    margin-bottom: 20px;
+    color: rgb(255, 255, 255); /* Cor do texto */
+    text-shadow: -7px 1px 0px #000000; /* Sombra preta sólida */
+}
+
+.banner p {
+    font-size: 22px;
+    margin-bottom: 30px;
+    font-weight: bolder;
+    text-shadow: -4px 0px 0px #000000;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #1b2733;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background-color: #b100b8;
+    color: #fffdfd;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.863);
+}
+
+/* Categorias */
+.categorias {
+    margin-bottom: 50px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #181f27;
+    font-size: 32px;
+    font-weight: 300;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #c0c0c0;
+}
+
+.categorias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.categoria {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.308);
+    transition: transform 0.3s;
+    text-align: center;
+}
+
+.categoria:hover {
+    transform: translateY(-10px);
+    cursor: pointer;
+}
+
+.categoria img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.categoria h3 {
+    padding: 20px;
+    color: #2c3e50;
+    font-size: 20px;
+}
+
+/* Estilos para o filtro de categorias */
+.categorias-filtro {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.categorias-filtro h3 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #c0c0c0;
+}
+
+.categorias-filtro ul {
+    list-style: none;
+}
+
+.categorias-filtro li {
+    margin-bottom: 12px;
+}
+
+.categorias-filtro a {
+    color: #7f8c8d;
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+.categorias-filtro a i {
+    margin-right: 10px;
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+}
+
+.categorias-filtro a:hover {
+    color: #2c3e50;
+    background-color: #f8f9fa;
+}
+
+.categorias-filtro a.ativo {
+    color: #2c3e50;
+    background-color: #e9ecef;
+    font-weight: 600;
+}
+
+/* Filtros de preço */
+.filtro-preco {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #e9ecef;
+}
+
+.filtro-preco h4 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.faixas-preco {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.faixa-preco {
+    display: flex;
+    align-items: center;
+}
+
+.faixa-preco input[type="checkbox"] {
+    margin-right: 10px;
+    accent-color: #c0c0c0;
+}
+
+.faixa-preco label {
+    color: #7f8c8d;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.faixa-preco input[type="checkbox"]:checked + label {
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+/* Filtro de materiais */
+.filtro-material {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e9ecef;
+}
+
+.filtro-material h4 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+/* Botões de ação do filtro */
+.filtro-acoes {
+    margin-top: 25px;
+    display: flex;
+    gap: 10px;
+}
+
+.filtro-acoes button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn-aplicar {
+    background-color: #c0c0c0;
+    color: #2c3e50;
+    flex: 2;
+}
+
+.btn-aplicar:hover {
+    background-color: #a8a8a8;
+}
+
+.btn-limpar {
+    background-color: #f8f9fa;
+    color: #7f8c8d;
+    flex: 1;
+}
+
+.btn-limpar:hover {
+    background-color: #e9ecef;
+    color: #2c3e50;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .categorias-filtro {
+        margin-bottom: 20px;
+    }
+    
+    .filtro-acoes {
+        flex-direction: column;
+    }
+    
+    .filtro-acoes button {
+        width: 100%;
+    }
+}
+
+/* Produtos em destaque */
+.produtos {
+    margin-bottom: 50px;
+}
+
+
+.produtos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.produto {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.produto:hover {
+    transform: translateY(-10px);
+    cursor: pointer;
+}
+
+.produto img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+}
+
+.produto-info {
+    padding: 20px;
+}
+
+.produto-info h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.produto-info p {
+    color: #5d5f5f;
+    margin-bottom: 15px;
+}
+
+.produto-preco {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.preco {
+    font-size: 22px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.btn-carrinho {
+    background-color: #280038;
+    color: #fcfcfc;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.btn-carrinho:hover {
+    background-color: #b100b8;
+    color: #ffffff;
+}
+
+/* Sobre */
+.sobre {
+    background-color: #280038;
+    color: white;
+    padding: 80px 0;
+    margin-bottom: 50px;
+}
+
+.sobre-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.sobre-texto {
+    flex: 1;
+    min-width: 300px;
+    padding-right: 30px;
+}
+
+.sobre-texto h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.sobre-imagem {
+    flex: 1;
+    min-width: 300px;
+}
+
+.sobre-imagem img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Newsletter */
+.newsletter {
+    background-color: #a970eb;
+    padding: 80px 0;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.newsletter h2 {
+    color: #191f25;
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+.newsletter p {
+    color: #191f25;
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+.newsletter form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.newsletter input {
+    padding: 15px;
+    width: 300px;
+    border: none;
+    border-radius: 30px 0 0 30px;
+    outline: none;
+}
+
+.newsletter button {
+    border: none;
+    border-radius: 0 30px 30px 0;
+    padding: 0 25px;
+    background-color: #280038;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.newsletter button:hover {
+    background-color: #b100b8;
+}
+
+/* Rodapé */
+footer {
+    background-color: #280038;
+    color: white;
+    padding-top: 50px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-section h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-section h3:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: #c0c0c0;
+}
+
+.footer-section p, .footer-section li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section a {
+    color: #c0c0c0;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: white;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    transition: background-color 0.3s;
+}
+
+.social-icons a:hover {
+    background-color: #c0c0c0;
+    color: #2c3e50;
+}
+
+.footer-bottom {
+    background-color: #000000;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .logo {
+        margin-bottom: 15px;
+        justify-content: center;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+    
+    nav ul li {
+        margin: 10px 0;
+    }
+    
+    .icons {
+        justify-content: center;
+    }
+    
+    .banner h2 {
+        font-size: 32px;
+    }
+    
+    .sobre-content {
+        flex-direction: column;
+    }
+    
+    .sobre-texto {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+    
+    .newsletter form {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .newsletter input {
+        border-radius: 30px;
+        margin-bottom: 10px;
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .newsletter button {
+        border-radius: 30px;
+        padding: 15px 25px;
+    }
+}
